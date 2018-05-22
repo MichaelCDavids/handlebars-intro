@@ -15,5 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
         email : 'lindani@pani.com'
     });
     userDataElem.innerHTML = userDataHTML;
+    var userDataList = { users: [
+    {username: "alan", firstName: "Alan", lastName: "Johnson", email: "alan@test.com" },
+    {username: "allison", firstName: "Allison", lastName: "House", email: "allison@test.com" },
+    {username: "ryan", firstName: "Ryan", lastName: "Carson", email: "ryan@test.com" }
+  ]};
+  var userDataHTML1 = userTemplate(userDataList);
+    userDataElem.innerHTML = userDataHTML1; 
 
 });

@@ -7,12 +7,14 @@
     <script src="users.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script type="text/x-template" class="userTemplate">
-        <tr>
-            <td>{{username}}</td>
-            <td>{{firstName}}</td>
-            <td>{{lastName}}</td>
-            <td>{{email}}</td>
-        </tr>
+      {{#each users}}
+         <tr>
+             <td>{{username}}</td>
+             <td>{{firstName}}</td>
+             <td>{{lastName}}</td>
+             <td>{{email}}</td>
+         </tr>
+      {{/each}}
     </script>
 </head>
 
