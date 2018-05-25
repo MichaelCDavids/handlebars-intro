@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Registration Numbers With Handlebars</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/registration_numbers.css">
+  <script src="js/registration_numbers.js" charset="utf-8"></script><!--Linking JavaScript to index-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Handlebars Template
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/x-template" class="registration-template">
+    {{#each plates}}
+         <li>{{this}}</li>
+    {{/each}}
+  </script>
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+         <div class="input-section">
+           <input id="regNumber" type="text" maxlength="11" class="registration-number-field" name="registration-number-field"  placeholder="Enter Registration Number" title="Enter an alphanumeric registration number  e.g( CA 123 456 )">
+           <button type="button" class="add-button" class="add-button">Add</button><!--Add Button-->
+           <button type="button" class="reset-button" class="reset-button">Reset</button><!--Add Button-->
+           <p id="errors"></p>
+         </div><!--End of input-section-->
+      </div>
+    </div>
+    <div class="row">
+       <div class="six columns">
+          <p align='center'>Registration Numbers </p>
+          <div class="filter-section">
+            <select id="select-filter" name="location">
+              <option value="all">All</option>
+              <option value="CY">Bellville</option>
+              <option value="CA ">Cape Town</option>
+              <option value="CAW">George</option>
+              <option value="CJ">Paarl</option>
+              <option value="CL">Stellenbosch</option>
+            </select>
+            <button type="button" id="apply-filter" name="apply-filter">Apply</button><!--Add Button-->
+         </div>
+         <div class="output-section">
+             <ul  id="my-list" class="registration_list">
+             </ul><!--End of registration_list-->
+         </div><!--End of output-section-->
+       </div>
+       <div class="six columns">
+          <p align='center'>Registration Numbers with Handlebars</p>
+          <div class="filter-section">
+            <select id="select-filter-handlebars" name="location">
+              <option value="all">All</option>
+              <option value="CY">Bellville</option>
+              <option value="CA ">Cape Town</option>
+              <option value="CAW">George</option>
+              <option value="CJ">Paarl</option>
+              <option value="CL">Stellenbosch</option>
+            </select>
+            <button type="button" id="apply-filter-handlebars" name="apply-filter">Apply</button><!--Add Button-->
+         </div>
+         <div class="output-section-handlebars">
+             <ul  id="my-list-handlebars"  class="registration_list insertRegistrationTemplate">
+             </ul><!--End of registration_list-->
+         </div><!--End of output-section-->
+       </div>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+<script src="js/RegistrationFactoryFunction.js" charset="utf-8"></script><!--Linking JavaScript to index-->
+</html>
