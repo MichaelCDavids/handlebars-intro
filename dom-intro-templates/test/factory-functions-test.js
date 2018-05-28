@@ -27,7 +27,7 @@ describe('The colorChange function ',function(){
      assert.equal(textFactoryObject.thresholdColor(),"warning");
   });
 
-  it('should return the name of the class to be added when warning level is reached', function(){
+  it('should return the name of the class to be added when critical level is reached', function(){
      var textFactoryObject = TextBill();
      textFactoryObject.billTwo('call');
      textFactoryObject.billTwo('call');
